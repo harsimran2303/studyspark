@@ -1,0 +1,28 @@
+# OS Files
+.DS_Store
+Thumbs.db
+.env
+.vscode/
+.idea/
+
+# Node (if used in future)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python (if used in future)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# Build and dist
+/dist/
+/build/
