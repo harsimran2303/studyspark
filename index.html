@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySpark - Study Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">✨ StudySpark</h1>
+            <p class="subtitle">Turn 10 Minutes Into Progress</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Subject Input Section -->
+            <section class="section input-section">
+                <label for="subject" class="label">📚 What do you want to study?</label>
+                <input 
+                    type="text" 
+                    id="subject" 
+                    class="input-box" 
+                    placeholder="e.g., Python, History, Biology, Math..."
+                    autocomplete="off"
+                >
+            </section>
+
+            <!-- Difficulty Selector -->
+            <section class="section difficulty-section">
+                <p class="section-label">🎯 Choose Difficulty:</p>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn easy" data-difficulty="easy">
+                        ⭐ Easy
+                    </button>
+                    <button class="difficulty-btn medium" data-difficulty="medium">
+                        ⭐⭐ Medium
+                    </button>
+                    <button class="difficulty-btn hard" data-difficulty="hard">
+                        ⭐⭐⭐ Hard
+                    </button>
+                </div>
+                <p class="selected-difficulty" id="selectedDifficulty">Select a difficulty level</p>
+            </section>
+
+            <!-- Generate Challenge Button -->
+            <section class="section">
+                <button id="generateBtn" class="generate-btn">Generate Challenge</button>
+            </section>
+
+            <!-- Challenge Display -->
+            <section class="section challenge-section" id="challengeSection" style="display: none;">
+                <div class="challenge-card">
+                    <h2 class="challenge-title">Your Challenge:</h2>
+                    <p class="challenge-text" id="challengeText"></p>
+                    <p class="subject-tag" id="subjectTag"></p>
+                </div>
+
+                <!-- Timer and Score -->
+                <div class="timer-score-container">
+                    <div class="timer-box">
+                        <p class="timer-label">⏱️ Time Left:</p>
+                        <div class="timer" id="timer">60</div>
+                    </div>
+                    <div class="score-box">
+                        <p class="score-label">🏆 Score:</p>
+                        <div class="score" id="score">0</div>
+                    </div>
+                </div>
+
+                <!-- Complete Challenge Button -->
+                <div class="action-buttons">
+                    <button id="completeBtn" class="complete-btn" disabled>✓ Challenge Complete</button>
+                    <button id="newChallengeBtn" class="new-challenge-btn" style="display: none;">🔄 New Challenge</button>
+                </div>
+            </section>
+
+            <!-- Motivational Message -->
+            <section class="section motivation-section" id="motivationSection">
+                <p class="motivation-text" id="motivationText">Ready to challenge yourself?</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Keep learning, keep growing! 🚀</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
