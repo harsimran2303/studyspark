@@ -81,6 +81,38 @@
             <section class="section motivation-section" id="motivationSection">
                 <p class="motivation-text" id="motivationText">Ready to challenge yourself?</p>
             </section>
+
+            <section class="section learning-tools-section" aria-label="Study tools">
+                <section class="learning-tool" aria-labelledby="qa-title">
+                    <h2 class="tool-title" id="qa-title">Ask StudySpark</h2>
+                    <p class="tool-description">Have a question about StudySpark? Ask away.</p>
+                    <form id="questionForm" class="question-form">
+                        <label class="label" for="question">Your question</label>
+                        <div class="question-controls">
+                            <input
+                                type="text"
+                                id="question"
+                                class="input-box"
+                                placeholder="Ask a question..."
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="tool-button">Ask</button>
+                        </div>
+                    </form>
+                    <p id="answer" class="tool-result" aria-live="polite"></p>
+                </section>
+
+                <section class="learning-tool quiz-section" aria-labelledby="quiz-title">
+                    <h2 class="tool-title" id="quiz-title">Quick Quiz</h2>
+                    <p id="quiz-question" class="tool-description">What does StudySpark help you do?</p>
+                    <div class="quiz-answers" role="group" aria-labelledby="quiz-question">
+                        <button type="button" class="quiz-answer" data-answer="A">A. Cook food</button>
+                        <button type="button" class="quiz-answer" data-answer="B">B. Organize and learn</button>
+                        <button type="button" class="quiz-answer" data-answer="C">C. Play games</button>
+                    </div>
+                    <p id="quiz-result" class="tool-result" aria-live="polite"></p>
+                </section>
+            </section>
         </main>
 
         <!-- Footer -->

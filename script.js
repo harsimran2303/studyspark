@@ -74,6 +74,11 @@ const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const motivationText = document.getElementById('motivationText');
 const selectedDifficultyText = document.getElementById('selectedDifficulty');
+const questionForm = document.getElementById('questionForm');
+const questionInput = document.getElementById('question');
+const answerDisplay = document.getElementById('answer');
+const quizResult = document.getElementById('quiz-result');
+const quizAnswerButtons = document.querySelectorAll('.quiz-answer');
 
 // ===== EVENT LISTENERS =====
 document.addEventListener('DOMContentLoaded', function() {
@@ -84,12 +89,44 @@ document.addEventListener('DOMContentLoaded', function() {
     generateBtn.addEventListener('click', generateChallenge);
     completeBtn.addEventListener('click', completeChallenge);
     newChallengeBtn.addEventListener('click', newChallenge);
+    questionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        getAnswer();
+    });
+    quizAnswerButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            checkAnswer(btn.dataset.answer);
+        });
+    });
     subjectInput.addEventListener('focus', function() {
         if (state.challengeActive) {
             updateMotivation();
         }
     });
 });
+
+// ===== STUDYSPARK Q&A =====
+function getAnswer() {
+    const question = questionInput.value.toLowerCase();
+    let answer = "Sorry, I don't know that yet.";
+
+    if (question.includes('study')) {
+        answer = 'StudySpark helps you organize and learn!';
+    }
+    if (question.includes('spark')) {
+        answer = 'Spark your knowledge with interactive guides!';
+    }
+
+    answerDisplay.textContent = answer;
+}
+
+// ===== QUICK QUIZ =====
+function checkAnswer(choice) {
+    const result = choice === 'B'
+        ? 'Correct! 🎉 StudySpark helps you organize and learn.'
+        : 'Try again!';
+    quizResult.textContent = result;
+}
 
 // ===== DIFFICULTY SELECTION =====
 function selectDifficulty(e) {
